@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript">
+    function showViewAlert() {
+        alert("hello from view");
+    }
+</script>
+
+@using (Html.BeginForm()) {
+    <div>
+            <iframe src="http://localhost:57882/iframepage.htm" width="300" height="300" id="IFrameTestId"></iframe>
+    </div>
+    <div>
+           <input type="submit" value="View Button" id="ViewButtonId" onclick="showViewAlert()"/>
+               
+    </div>
+}

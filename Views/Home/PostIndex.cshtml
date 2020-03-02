@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm()) {
+    <div>
+            <div class="editor-label">
+                EnteredName:
+                @Html.TextBox("EnteredName", (string)ViewBag.UserName)
+            </div>
+            <div class="editor-label">
+                EnteredOptions:
+                @Html.DropDownList("EnteredOptions", ViewBag.Options as SelectList, "Please select", new { @id = "EnteredOptions" })
+            </div>
+    </div>
+}

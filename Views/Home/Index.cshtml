@@ -1,0 +1,44 @@
+﻿
+<script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#Options").change(function () {
+            var selectedText1 = $("#Options option:selected").text()
+            $('#selectedtext').val(selectedText1);
+        });
+    });
+
+
+
+</script>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm()) {
+    <div>
+        <fieldset>
+            <legend>User Information</legend>
+
+            <div class="editor-label">
+                Name:
+                <input id="Name" name="Name" />
+            </div>
+
+            <div>
+                  Options:
+                  @Html.DropDownList("Options", ViewBag.Options as SelectList, "Please select", new { @id = "Options" })
+            </div>
+
+             <div class="editor-field">
+                <input id="selectedtext" type="hidden" name="selectedtext" />
+            </div>
+
+            <p>
+                <input type="submit" value="Submit" />
+            </p>
+        </fieldset>
+    </div>
+}
